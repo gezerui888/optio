@@ -414,9 +414,7 @@ export function startTaskWorker() {
         // repoConfig already loaded above for concurrency check
 
         const parsedRepo = parseRepoUrl(task.repoUrl);
-        const repoName = parsedRepo
-          ? `${parsedRepo.owner}/${parsedRepo.repo}`
-          : task.repoUrl.replace(/.*[/:]([^/]+\/[^/.]+).*/, "$1");
+        const repoName = parsedRepo ? `${parsedRepo.owner}/${parsedRepo.repo}` : task.repoUrl;
         const isGitLab = parsedRepo?.platform === "gitlab";
         const isCodeCommit = parsedRepo?.platform === "codecommit";
         const branchName = `${TASK_BRANCH_PREFIX}${task.id}`;
