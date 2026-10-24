@@ -81,6 +81,11 @@ RUN npm install -g @anthropic-ai/claude-code@2.1.112
 RUN npm install -g @openai/codex \
     && codex exec --help | grep -q -- --dangerously-bypass-approvals-and-sandbox
 
+# Pi: native JSONL + MCP protocol used by the Pi adapter.
+ARG PI_VERSION=1.4.0
+RUN npm install -g --ignore-scripts @earendil-works/pi-coding-agent@${PI_VERSION} \
+    && pi --version
+
 # GitHub Copilot CLI (pinned + best-effort — package may be temporarily unavailable)
 RUN npm install -g @github/copilot@1.0.20 || echo "WARN: @github/copilot install failed; copilot agent will not be available in this image"
 

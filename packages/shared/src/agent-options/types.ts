@@ -24,7 +24,8 @@ export type AgentProviderId =
   | "copilot"
   | "opencode"
   | "openclaw"
-  | "cursor";
+  | "cursor"
+  | "pi";
 
 export interface ModelOption {
   /** The canonical model id passed to the provider (e.g. "claude-opus-4-7"). */

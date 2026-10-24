@@ -141,6 +141,18 @@ const SPECS: Record<string, CredentialSpec[]> = {
       hint: "A GitHub token for an account with Copilot.",
     },
   ],
+  pi: [
+    ANTHROPIC_KEY,
+    OPENAI_KEY,
+    {
+      secretName: "GEMINI_API_KEY",
+      method: "api-key",
+      label: "Gemini API key",
+      input: "token",
+      verifiable: true,
+      addable: true,
+    },
+  ],
   cursor: [
     {
       secretName: "CURSOR_API_KEY",
