@@ -345,8 +345,7 @@ export async function setupRoutes(rawApp: FastifyInstance) {
         const cc = new CC({ region, credentials });
         const list = await cc.send(new ListRepositoriesCommand({}));
         const names = (list.repositories ?? []).map((r) => r.repositoryName).filter(Boolean) as
-          | string[]
-          | [];
+          string[] | [];
         const details = await Promise.all(
           names.slice(0, 50).map((name) =>
             cc

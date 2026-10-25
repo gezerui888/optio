@@ -17,6 +17,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Standardize service images, agent images, development, and CI on Node.js 26.12.1, including the October security fixes for CVE-2026-111497 and other advisories. Node images are pinned by multi-platform digest; Ubuntu agent images copy the same runtime. Install pnpm explicitly because Node 26 no longer bundles Corepack.
+- Refresh compatible dependency releases, including Fastify, AWS SDK, MCP SDK, React, Tailwind, Playwright, authentication libraries, tooling, and the latest Next.js 15 patch. Keep larger framework migrations and documented agent workaround pins separate.
 - The GitHub Pages site prominently links to the repository in desktop and mobile headers, with View on GitHub as the primary home-page action.
 
 ### Fixed

@@ -333,21 +333,19 @@ export async function listAgentCredentials(
         p.agents.includes(agentType as ModelProviderAgent) &&
         (!p.ownerUserId || p.ownerUserId === viewer.userId),
     )
-    .map(
-      (p): AgentCredential => ({
-        id: `provider:${p.id}`,
-        kind: "provider",
-        method: "bedrock",
-        label: `Amazon Bedrock · ${p.name}`,
-        secretName: null,
-        providerId: p.id,
-        owner: p.ownerUserId ? "me" : "workspace",
-        ownerUserId: p.ownerUserId ?? null,
-        ownerName: null,
-        default: false,
-        updatedAt: null,
-      }),
-    );
+    .map((p): AgentCredential => ({
+      id: `provider:${p.id}`,
+      kind: "provider",
+      method: "bedrock",
+      label: `Amazon Bedrock · ${p.name}`,
+      secretName: null,
+      providerId: p.id,
+      owner: p.ownerUserId ? "me" : "workspace",
+      ownerUserId: p.ownerUserId ?? null,
+      ownerName: null,
+      default: false,
+      updatedAt: null,
+    }));
 
   return {
     credentials: [...org.map(toCredential), ...mine.map(toCredential), ...providers],

@@ -62,14 +62,7 @@ export const ALL_PROVIDER_IDS: readonly AgentProviderId[] = [
  * `providerForAgentType()`.
  */
 export type AgentType =
-  | "claude-code"
-  | "codex"
-  | "copilot"
-  | "opencode"
-  | "gemini"
-  | "openclaw"
-  | "cursor"
-  | "pi";
+  "claude-code" | "codex" | "copilot" | "opencode" | "gemini" | "openclaw" | "cursor" | "pi";
 
 export const AGENT_TYPES: readonly AgentType[] = [
   "claude-code",
